@@ -1,5 +1,5 @@
 package app;
-import UI.view.ViewCadastrarAdmin;
+import UI.view.ViewCadastrarEmailEmpresa;
 import UI.view.ViewInicio;
 import UI.view.ViewRecuperarSenha; 
 import system.ControllerGerenciador;
@@ -8,7 +8,7 @@ import system.ControllerGerenciador;
    public static void main(String[] args) {
      ControllerGerenciador control = new ControllerGerenciador();
      if (control.getAdministrador() == null) {
-     		new ViewCadastrarAdmin();
+     		new ViewCadastrarEmailEmpresa();
      } else if (control.getAdministrador().isToken()) {
      		new ViewRecuperarSenha();
      } else {

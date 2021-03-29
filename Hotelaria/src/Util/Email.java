@@ -1,10 +1,11 @@
-/*    */ package Util;
-/*    */ 
-/*    */ import javax.mail.Authenticator;
-/*    */ import javax.swing.JOptionPane;
-/*    */ import org.apache.commons.mail.DefaultAuthenticator;
-/*    */ import org.apache.commons.mail.EmailException;
-/*    */ import org.apache.commons.mail.SimpleEmail;
+ package Util;
+ import javax.swing.JOptionPane;
+ import org.apache.commons.mail.DefaultAuthenticator;
+ import org.apache.commons.mail.EmailException;
+ import org.apache.commons.mail.SimpleEmail;
+
+ import system.ControllerGerenciador;
+ import system.Empresa;
 /*    */ 
 /*    */ public class Email {
 /*    */   public boolean enviarEmail(String destino, String assunto, String msg) {
@@ -12,9 +13,11 @@
 /* 13 */     email.setSSLOnConnect(true);
 /* 14 */     email.setHostName("smtp.gmail.com");
 /* 15 */     email.setSslSmtpPort("465");
-/* 16 */     email.setAuthenticator(new DefaultAuthenticator("********", "*********"));
+	         ControllerGerenciador controller = new ControllerGerenciador();
+	         Empresa empresa = controller.getEmpresa();
+/* 16 */     email.setAuthenticator(new DefaultAuthenticator(empresa.getEmail(), empresa.getSenha()));
 /*    */     try {
-/* 18 */       email.setFrom("************");
+/* 18 */       email.setFrom(empresa.getEmail());
 /* 19 */       email.setDebug(true);
 /* 20 */       email.setSubject(assunto);
 /* 21 */       email.setMsg(msg);

@@ -6,6 +6,7 @@
    private ArrayList<Pessoa> pessoas = new ArrayList<>();
    private static GerenciadorDeDados gerenciador;
    private Administrador administrador;
+   private Empresa empresa;
    private long version;
    
    public static synchronized GerenciadorDeDados getInstance() {
@@ -18,6 +19,14 @@
      this.administrador = new Administrador(email, senha);
    }
    
+   public void adicionarEmpresa(String email, String senha){
+	   this.empresa = new Empresa();
+	   this.empresa.setEmail(email);
+	   this.empresa.setSenha(senha);
+   }
+   public Empresa getEmpresa(){
+	   return this.empresa;
+   }
    public void removerAdmin() {
      this.administrador = null;
    }

@@ -25,7 +25,13 @@
    public Administrador getAdministrador() {
      return this.gerenciador.getAdmin();
    }
-   
+   public void adicionarEmpresa(String email,String senha){
+	   this.gerenciador.adicionarEmpresa(email, senha);
+	   BancoXML.save("C:/Documentos/Hotel/dadosPessoa", this.gerenciador);
+   }
+   public Empresa getEmpresa(){
+	   return this.gerenciador.getEmpresa();
+   }
    public boolean removePessoa(String cpf) {
      Pessoa pessoa = pesquisa(cpf);
      boolean teste = this.gerenciador.removerPessoa(pessoa);
