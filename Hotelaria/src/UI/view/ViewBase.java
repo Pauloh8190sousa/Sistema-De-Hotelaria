@@ -6,7 +6,7 @@ import javax.swing.JFrame;
  public abstract class ViewBase extends JFrame {
    public ViewBase() {
      templateMethod();
-     setExtendedState(6);
+     setExtendedState(MAXIMIZED_BOTH);
      repaint();
    }
    
