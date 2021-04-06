@@ -19,4 +19,4 @@ Um sistema desenvolvido em Java para Desktops, e foi utilizada no Esperança Hot
 |-------------------------|----------------------|
 |    Setembro de 2020     |    Novembro de 2020  |
 ## Última Atualização
-teste
+- Correção de erro - **01/04/2021**
